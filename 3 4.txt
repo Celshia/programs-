@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main()
+{
+    int arr[1000],n=10,index,count,print;
+    count=0;
+    arr[0]=3;
+    arr[1]=4;
+    for(index=2;index<=n-1;index++)
+    {
+        arr[index]=arr[count]*10+3;
+        arr[++index]=arr[count]*10+4;
+        count++;
+    }
+    for(print=0;print<n;print++)
+        printf("%d ",arr[print]);
+
+
+
+
+
+
+    return 0;
+}

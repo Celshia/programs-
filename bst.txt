@@ -1,0 +1,62 @@
+#include<stdio.h>
+typedef struct node
+{
+    struct node *left;
+    int data;
+    struct node *right;
+}NODE;
+NODE *root,*tptr,*prev;
+void addChild(int givenData)
+{
+    NODE *newnode;
+    newnode=(NODE*)malloc(sizeof(NODE));
+    newnode->data=givenData;
+    newnode->left=newnode->right=NULL;
+    if(root==NULL)
+        root=newnode;
+    else
+    {
+    tptr=root;
+    while(tptr)
+    {
+        prev=tptr;
+        if(tptr->data<givenData)
+            tptr=tptr->right;
+        else if(tptr->data>givenData)
+            tptr=tptr->left;
+        else
+            break;
+    }
+    if(tptr==NULL)
+    {
+        if(prev->data<givenData)
+            prev->right=newnode;
+        else
+            prev->left=newnode;
+    }
+    }
+}
+void preOrder(NODE *print)
+{
+    printf("%d ",print->data);
+    if(print->left!=NULL)
+        preOrder(print->left);
+    if(print->right!=NULL)
+        preOrder(print->right);
+}
+int main()
+{
+    addChild(50);
+    addChild(60);
+    addChild(40);
+    addChild(10);
+    addChild(55);
+    addChild(70);
+    preOrder(root);
+    return 0;
+}
+
+
+
+
+

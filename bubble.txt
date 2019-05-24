@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main()
+{
+    int arr[]={17,24,39,42,14,9,50,41},count,n=8,index,print;
+    for(count=1;count<=n-1;count++)
+    {
+    for(index=0;index<=n-count-1;index++)
+    {
+        if(arr[index]>arr[index+1])
+        {
+            int temp=arr[index];
+            arr[index]=arr[index+1];
+            arr[index+1]=temp;
+        }
+    }
+    for(print=0;print<n;print++)
+        printf("%d ",arr[print]);
+    printf("\n");
+    }
+    return 0;
+}
+
+
+
+
+
+
+

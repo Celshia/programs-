@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+    int n=17,digit,num=0,pv=1;
+    while(n>=1)
+    {
+        if(n%2==1)
+            digit=3;
+        else
+            digit=4;
+        num=(digit*pv)+num;
+        pv=pv*10;
+        n=(n-1)/2;
+    }
+    printf("%d",num);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
